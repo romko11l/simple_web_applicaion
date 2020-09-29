@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Рома хочет кушать</title>
+</head>
+<body>
+
+  <table>
+    <th>ID</th>
+    <th>Login</th>
+    {% for post in posts %}
+    <tr>
+      {% for x in post %}
+        <td>
+          {{x}}
+        </td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+
+</body>
+</html>

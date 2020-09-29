@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import redirection
+
 
 urlpatterns = [
+    path('', redirection),
     path('admin/', admin.site.urls),
     path('users/', include('users_table.urls')),
 ]

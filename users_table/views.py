@@ -10,25 +10,27 @@ def give_my_table(request):
     cursor = conn.cursor()
     cursor.execute("SELECT id, login FROM users WHERE status='active'")
     results = cursor.fetchall()
-    print(results)
     conn.close()
-    return(HttpResponse('ok'))
+    return render(request, 'users_table/index.html', context={'posts': results})
 
 
 @require_http_methods(['GET'])
 def give_my_table_by_login(request):
     conn = sqlite3.connect('db.sqlite3')
-    print()
-    print(type(request.GET['login']))
-    print()
+    cursor = conn.cursor()
+    sql_part = request.GET['login']
+    cursor.execute("SELECT id, login FROM users WHERE login='" + sql_part + "'")
+    results = cursor.fetchall()
     conn.close()
-    return(HttpResponse('ok'))
+    return render(request, 'users_table/index.html', context={'posts': results})
 
 
 @require_http_methods(['GET'])
 def give_my_table_by_id(request):
     conn = sqlite3.connect('db.sqlite3')
-    print()
-    print()
+    cursor = conn.cursor()
+    sql_part = request.GET['id']
+    cursor.execute("SELECT id, login FROM users WHERE id='" + sql_part + "'")
+    results = cursor.fetchall()
     conn.close()
-    return(HttpResponse('ok'))
+    return render(request, 'users_table/index.html', context={'posts': results})
