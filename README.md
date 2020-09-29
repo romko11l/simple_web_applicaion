@@ -1,6 +1,6 @@
 Гайд по установке и запуску:
 
-1. Клонируйте репозиторий (git clone https://github.com/romko11l/simple_web_applicaion)
+1. Клонируйте репозиторий (git clone https://github.com/romko11l/simple_web_application)
 2. Создайте и запустите виртуальное окружение (virtualenv venv и source ./venv/bin/activate) (+ cd ./simple_web_application)
 3. Установите зависимости из файлика requirements.txt (pip install requiremenst.txt).
 Если pip ругается, то установите руками нужную версию Django (pip install Django==3.1.1)
